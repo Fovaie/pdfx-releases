@@ -47,20 +47,18 @@ for in commercial PDF apps — no subscription, no account, no watermark.
    [latest release](https://github.com/Fovaie/pdfx-releases/releases/latest)
    and open it.
 2. Drag **PDF Xper** into Applications, replacing any older version (including
-   one named pdfx).
-3. **First launch** — PDF Xper is not notarized by Apple yet, so macOS blocks
-   it the first time ("PDF Xper" Not Opened). Right-click › Open no longer
-   works on macOS 15 and later; instead:
-   1. Click **Done** in that dialog.
-   2. Open **System Settings › Privacy & Security** and scroll down to
-      *"PDF Xper" was blocked to protect your Mac*.
-   3. Click **Open Anyway**, confirm with your password or Touch ID, and open
-      PDF Xper again.
+   one named pdfx), and open it. PDF Xper is signed with a Developer ID and
+   notarized by Apple, so it opens like any other app.
 
-   You only need to do this once per installed version.
+<details>
+<summary>Versions before 1.0.4 were not notarized — how to open them</summary>
 
-   Prefer Terminal? This does the same:
-   `xattr -dr com.apple.quarantine "/Applications/PDF Xper.app"`
+macOS blocks un-notarized apps on first launch ("PDF Xper" Not Opened).
+Click **Done**, open **System Settings › Privacy & Security**, scroll down,
+and click **Open Anyway** next to *"PDF Xper" was blocked*. Or run
+`xattr -dr com.apple.quarantine "/Applications/PDF Xper.app"` in Terminal.
+Updating to 1.0.4 or later avoids this.
+</details>
 
 **Requirements:** a Mac with Apple silicon (M1 or later).
 
